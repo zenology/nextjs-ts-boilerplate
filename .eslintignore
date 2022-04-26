@@ -1,0 +1,5 @@
+public/
+dist/
+src/dist/
+node_modules/
+package*.json

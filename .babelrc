@@ -1,0 +1,24 @@
+{
+  "presets": [
+    [
+      "next/babel",
+      {
+        "class-properties": { },
+        "preset-react": {
+          "runtime": "automatic"
+        }
+      }
+    ]
+  ],
+  "plugins": [
+    "lodash",
+    [
+      "module-resolver",
+      {
+        "alias": {
+      
+        }
+      }
+    ]
+  ]
+}
