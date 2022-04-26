@@ -4,10 +4,13 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
     "start": "next start",
-    "lint": "next lint src",
-    "format": "lint src --fix"
+    "build:dev": "NODE_ENV=development next build",
+    "build:qa": "NODE_ENV=qa next build",
+    "build:uat": "NODE_ENV=uat next build",
+    "build:prod": "NODE_ENV=production next build",
+    "lint": "eslint src",
+    "format": "eslint src --fix"
   },
   "dependencies": {
     "next": "12.1.5",
@@ -33,6 +36,7 @@
     "babel-plugin-module-resolver": "^4.1.0",
     "babel-preset-react-app": "^10.0.1",
     "eslint": "^7.11.0",
+    "eslint-config-next": "^0.2.4",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-prettier": "^3.4.1",
