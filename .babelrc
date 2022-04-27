@@ -1,24 +1,36 @@
 {
-  "presets": [
-    [
-      "next/babel",
+	"presets": [
+		[
+			"next/babel",
+			{
+				"class-properties": {},
+				"preset-react": {
+					"runtime": "automatic"
+				}
+			}
+		]
+	],
+	"plugins": [
+		"lodash",
+		"polished",
+		[
+      "babel-plugin-styled-components",
       {
-        "class-properties": { },
-        "preset-react": {
-          "runtime": "automatic"
-        }
+        "ssr": true,
+				"displayName": true,
+        "preprocess": false
       }
-    ]
-  ],
-  "plugins": [
-    "lodash",
-    [
-      "module-resolver",
-      {
-        "alias": {
-      
-        }
-      }
-    ]
-  ]
+    ],
+		[
+			"module-resolver",
+			{
+				"alias": {
+					"router": "./src/router",
+          "components": "./src/components",
+          "core": "./src/core",
+          "config": "./src/config"
+				}
+			}
+		]
+	]
 }
