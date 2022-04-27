@@ -1,6 +1,6 @@
 import { NextPage } from 'next'
 
-import Error500Page from 'components/pages/error/500'
+import Error500Page from 'components/pages/error/Error500Page/Error500Page'
 
 const ErrorPage: NextPage = () => {
 	return <Error500Page />

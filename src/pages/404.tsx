@@ -1,7 +1,3 @@
-import { NextPage } from 'next'
+import Error400Page from 'components/pages/error/Error400Page/Error400Page'
 
-const Page404: NextPage = () => {
-	return <b>this is not found page</b>
-}
-
-export default Page404
+export default Error400Page
