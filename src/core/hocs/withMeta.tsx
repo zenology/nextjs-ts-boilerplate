@@ -1,5 +1,5 @@
 import React from 'react'
-import Helmet from 'react-helmet'
+import Head from 'next/head'
 
 import type { Router } from 'next/router'
 
@@ -18,14 +18,14 @@ const withMeta = (
 
 		return (
 			<>
-				<Helmet>
+				<Head>
 					{title && <title>{title}</title>}
 					{Object.keys(meta).map((name) => (
 						<meta key={name} name={name} content={meta[name]} />
 					))}
 					<meta property="og:url" content={router?.asPath} />
 					<link rel="canonical" href={router?.asPath} />
-				</Helmet>
+				</Head>
 				<PageComponent {...props} />
 			</>
 		)

@@ -1,53 +1,50 @@
-import Document, { Html, Head, Main, NextScript, DocumentInitialProps } from 'next/document'
+import Document, {
+	Html,
+	Head,
+	Main,
+	NextScript,
+	DocumentInitialProps,
+	DocumentContext
+} from 'next/document'
 import React from 'react'
-import Helmet, { HelmetData } from 'react-helmet'
 import { ServerStyleSheet } from 'styled-components'
 
 type InitialProps = {
-	helmet: HelmetData
-	styles: any
-	styleTags: any
+	styles: DocumentInitialProps['styles']
 	[key: string]: any
 }
 
 export default class MyDocument extends Document<InitialProps> {
-	static async getInitialProps({ renderPage }: { renderPage: any }): Promise<DocumentInitialProps> {
-		// Step 1: Create an instance of ServerStyleSheet
+	static async getInitialProps(ctx: DocumentContext): Promise<DocumentInitialProps> {
 		const sheet = new ServerStyleSheet()
+		const originalRenderPage = ctx.renderPage
 
-		// Step 2: Retrieve styles from components in the page
-		const documentProps = renderPage(
-			(App: React.ComponentType<any>) => (props: any) => sheet.collectStyles(<App {...props} />)
-		)
+		try {
+			ctx.renderPage = () =>
+				originalRenderPage({
+					enhanceApp: (App: React.ComponentType<any>) => (props: any) =>
+						sheet.collectStyles(<App {...props} />)
+				})
 
-		// Step 3: Extract the styles as <style> tags
-		const styleTags = sheet.getStyleElement()
+			const initialProps = await Document.getInitialProps(ctx)
 
-		return {
-			...documentProps,
-			styleTags,
-			helmet: Helmet.renderStatic(),
-			styles: null
+			return {
+				...initialProps,
+				styles: sheet.getStyleElement()
+			}
+		} finally {
+			sheet.seal()
 		}
 	}
 
 	render(): JSX.Element {
-		const { helmet } = this.props
-		const htmlAttrs = helmet.htmlAttributes.toComponent()
-		const bodyAttrs = helmet.bodyAttributes.toComponent()
-
 		return (
-			<Html {...htmlAttrs}>
+			<Html>
 				<Head>
-					{helmet.title.toComponent()}
-					{helmet.meta.toComponent()}
 					<link rel="shortcut icon" href={'/favicon.ico'} />
-					{helmet.link.toComponent()}
-					{helmet.script.toComponent()}
-					{this.props.styleTags}
+					{this.props.styles}
 				</Head>
-				<body {...bodyAttrs}>
-					{helmet.noscript.toComponent()}
+				<body>
 					<Main />
 					<NextScript />
 				</body>
