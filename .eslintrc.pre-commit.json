@@ -1,0 +1,77 @@
+{
+	"parser": "@typescript-eslint/parser",
+	"parserOptions": {
+		"sourceType": "module",
+		"allowImportExportEverywhere": false,
+		"codeFrame": false,
+		"ecmaVersion": 2020
+	},
+	"extends": [
+		"plugin:@typescript-eslint/eslint-recommended",
+		"plugin:@typescript-eslint/recommended",
+		"plugin:prettier/recommended",
+		"prettier",
+		"plugin:security/recommended"
+	],
+	"plugins": [
+		"react",
+		"react-hooks",
+		"@typescript-eslint/eslint-plugin",
+		"sort-requires",
+		"security"
+	],
+	"env": {
+		"es6": true,
+		"browser": true,
+		"jest": true,
+		"node": true,
+		"commonjs": true
+	},
+	"rules": {
+		"@typescript-eslint/interface-name-prefix": "off",
+		"@typescript-eslint/explicit-function-return-type": "off",
+		"@typescript-eslint/no-explicit-any": "off",
+		"@typescript-eslint/no-unused-vars": "warn",
+		"prefer-promise-reject-errors": ["off"],
+		"react/jsx-filename-extension": ["off"],
+		"react/prop-types": "off",
+		"react-hooks/rules-of-hooks": "error",
+		"react-hooks/exhaustive-deps": "warn",
+		"no-var": "error",
+		"no-console": "error",
+		"no-debugger": "error",
+		"array-callback-return": "off",
+		"complexity": ["error", 15],
+		"consistent-return": "off",
+		"default-case": "error",
+		"default-case-last": "off",
+		"no-eval": "error",
+		"react/display-name": "off",
+		"no-return-await": "off",
+		"eol-last": ["error", "always"],
+		"padding-line-between-statements": [
+			"error",
+			{
+				"blankLine": "always",
+				"prev": "*",
+				"next": "return"
+			}
+		],
+		"no-unreachable-loop": "off",
+		"no-loop-func": "error",
+		"no-multi-str": "error",
+		"no-nested-ternary": "off",
+		"no-duplicate-imports": "error",
+		"prefer-const": "error",
+		"prefer-template": "error",
+		"prefer-rest-params": "error",
+		"no-useless-rename": "error",
+		"quotes": ["error", "single"],
+		"block-spacing": "error",
+		"linebreak-style": ["error", "unix"],
+		"arrow-parens": ["error", "always"],
+		"template-curly-spacing": ["error", "never"],
+		"no-unused-vars": "warn",
+		"security/detect-object-injection": ["off"]
+	}
+}

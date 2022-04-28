@@ -1,0 +1,4 @@
+{
+	"*.(js|jsx|ts|tsx)": "yarn lint --max-warnings=0",
+	"*": "yarn test  --bail --findRelatedTests --passWithNoTests "
+}

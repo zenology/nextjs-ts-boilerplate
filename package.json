@@ -13,7 +13,9 @@
     "test": "jest",
     "test:coverage": "jest --coverage",
     "lint": "eslint src",
-    "format": "eslint src --fix"
+    "format": "eslint src --fix",
+    "pre-commit": "lint-staged",
+    "prepare": "husky install"
   },
   "dependencies": {
     "axios": "^0.27.2",
@@ -66,8 +68,10 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-security": "^1.4.0",
     "eslint-plugin-sort-requires": "^2.1.0",
+    "husky": "^7.0.0",
     "jest": "^28.0.1",
     "jest-environment-jsdom": "^28.0.1",
+    "lint-staged": "^12.4.1",
     "prettier": "^2.1.1",
     "serve-favicon": "^2.5.0",
     "ts-node": "^10.7.0",
