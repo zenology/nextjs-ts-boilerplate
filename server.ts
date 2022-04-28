@@ -1,24 +1,35 @@
-import express, { Request, Response } from 'express'
+import path from 'path'
+import express from 'express'
 import next from 'next'
+import favicon from 'serve-favicon'
+import routes from './src/core/routes'
 
-const dev = process.env.NODE_ENV !== 'production'
-const app = next({ dev })
-const handle = app.getRequestHandler()
 const port = process.env.PORT || 3000
 
-;(async () => {
-	try {
-		await app.prepare()
+const app = next({
+	dev: process.env.NODE_ENV !== 'production'
+})
+
+const handle = routes.getRequestHandler(app)
+
+app
+	.prepare()
+	.then(() => {
 		const server = express()
-		server.all('*', (req: Request, res: Response) => {
-			return handle(req, res)
+
+		server.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
+
+		server.get('*', function (req, res) {
+			handle(req, res)
 		})
-		server.listen(port, (err?: any) => {
-			if (err) throw err
-			console.log(`> Ready on localhost:${port} - env ${process.env.NODE_ENV}`)
+
+		server.listen(port, () => {
+			// eslint-disable-next-line
+			console.log(`> Ready on http://localhost:${port}`)
 		})
-	} catch (e) {
+	})
+	.catch((e: any) => {
+		// eslint-disable-next-line
 		console.error(e)
 		process.exit(1)
-	}
-})()
+	})

@@ -1,17 +1,17 @@
 import React from 'react'
-import Link from 'next/link'
+
+import { Link } from 'core/routes'
 import { NavigationWrapper } from './Navigation.styled'
 
 const Navigation: React.FC = () => {
 	const menus = React.useMemo(
 		() => [
 			{
-				name: 'home',
-				path: '/'
+				name: 'home'
 			},
 			{
 				name: 'about',
-				path: '/about/2'
+				params: { id: 2 }
 			}
 		],
 		[]
@@ -21,9 +21,9 @@ const Navigation: React.FC = () => {
 		<NavigationWrapper>
 			<div className="container">
 				<ul>
-					{menus.map(({ name, path }) => (
+					{menus.map(({ name, params }) => (
 						<li key={name}>
-							<Link href={path ?? name}>
+							<Link route={name} params={params}>
 								<a>{name}</a>
 							</Link>
 						</li>
