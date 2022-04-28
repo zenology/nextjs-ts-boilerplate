@@ -1,8 +1,7 @@
-import Head from 'next/head'
 import App from 'next/app'
+import Head from 'next/head'
 
 import { ComposeProvider } from 'core/providers'
-
 import { GlobalStyles } from 'core/styles'
 
 class MyApp extends App {

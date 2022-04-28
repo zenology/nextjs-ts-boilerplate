@@ -1,9 +1,10 @@
 /** @type {import('next').NextConfig} */
 /* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path')
-const Dotenv = require('dotenv-webpack')
+
 const withBundleAnalyzer = require('@zeit/next-bundle-analyzer')
 const CircularDependencyPlugin = require('circular-dependency-plugin')
+const Dotenv = require('dotenv-webpack')
 
 const nextConfig = {
 	reactStrictMode: true,

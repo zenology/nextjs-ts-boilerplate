@@ -1,3 +1,5 @@
+import React from 'react'
+
 import Document, {
 	Html,
 	Head,
@@ -6,7 +8,6 @@ import Document, {
 	DocumentInitialProps,
 	DocumentContext
 } from 'next/document'
-import React from 'react'
 import { ServerStyleSheet } from 'styled-components'
 
 type InitialProps = {

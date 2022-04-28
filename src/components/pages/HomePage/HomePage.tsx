@@ -1,9 +1,9 @@
+import envObj from 'core/config/env'
 import { withPage } from 'core/hocs'
 
 import { PageWrapper } from './HomePage.styled'
 
 import type { GetStaticProps } from 'next'
-import envObj from 'core/config/env'
 
 type PageProps = {
 	title: string

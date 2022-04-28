@@ -1,8 +1,7 @@
+import { fetchAPI } from 'core/api'
 import { withPage } from 'core/hocs'
 
 import { InnerWrapper, PageWrapper } from './AboutPage.styled'
-
-import { fetchAPI } from 'core/api'
 
 import type { GetServerSideProps } from 'next'
 

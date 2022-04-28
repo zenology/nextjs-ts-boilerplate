@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { Link } from 'core/routes'
+
 import { NavigationWrapper } from './Navigation.styled'
 
 const Navigation: React.FC = () => {

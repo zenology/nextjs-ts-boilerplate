@@ -1,5 +1,7 @@
 import React from 'react'
+
 import Routes, { LinkProps } from 'next-routes'
+
 import allRoutes from './routes'
 
 const routes = new Routes()

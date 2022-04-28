@@ -3138,7 +3138,7 @@ eslint-module-utils@^2.7.3:
     debug "^3.2.7"
     find-up "^2.1.0"
 
-eslint-plugin-import@^2.22.0:
+eslint-plugin-import@^2.26.0:
   version "2.26.0"
   resolved "https://registry.yarnpkg.com/eslint-plugin-import/-/eslint-plugin-import-2.26.0.tgz#f812dc47be4f2b72b478a021605a59fc6fe8b88b"
   integrity sha512-hYfi3FXaM8WPLf4S1cikh/r4IxnO6zrhZbEGz2b660EJRbuxgpDS5gkCuYgGWg2xxh2rBuIr4Pvhve/7c31koA==
@@ -3195,6 +3195,11 @@ eslint-plugin-security@^1.4.0:
   integrity sha512-hAFVwLZ/UeXrlyVD2TDarv/x00CoFVpaY0IUZhKjPjiFxqkuQVixsK4f2rxngeQOqSxi6OUjzJM/jMwKEVjJ8g==
   dependencies:
     safe-regex "^2.1.1"
+
+eslint-plugin-sort-import@^1.0.7:
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-sort-import/-/eslint-plugin-sort-import-1.0.7.tgz#bfa8a770454a2b579e30cbc71faaf94c89d3beb2"
+  integrity sha512-81cxsEssvm9xVZ+VZoN0wp1k5/mnxJl5lv16tHYluGdH6QPB0ZoO1m1hoaO06rYBvLRYGhaLJHEMiaB9R2k1Lw==
 
 eslint-plugin-sort-requires@^2.1.0:
   version "2.1.0"

@@ -1,8 +1,9 @@
+import React from 'react'
+
 import { flowRight as compose } from 'lodash'
 
-import withMeta from './withMeta'
 import withLayout from './withLayout'
-import React from 'react'
+import withMeta from './withMeta'
 
 const withPage =
 	() =>

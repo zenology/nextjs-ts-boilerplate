@@ -18,6 +18,8 @@
 		"react-hooks",
 		"@typescript-eslint/eslint-plugin",
 		"sort-requires",
+		"sort-import",
+		"import",
 		"security"
 	],
 	"env": {
@@ -72,6 +74,43 @@
 		"arrow-parens": ["error", "always"],
 		"template-curly-spacing": ["error", "never"],
 		"no-unused-vars": "warn",
-		"security/detect-object-injection": ["off"]
+		"security/detect-object-injection": ["off"],
+		"import/first": "error",
+		"import/exports-last": "error",
+		"import/newline-after-import": "error",
+		"import/order": [
+			"error",
+			{
+				"groups": ["builtin", "external", "internal", "parent", "sibling", "index", "type"],
+				"pathGroups": [
+					{
+						"pattern": "react",
+						"group": "builtin",
+						"position": "before"
+					},
+					{
+						"pattern": "components/**",
+						"group": "parent",
+						"position": "after"
+					},
+					{
+						"pattern": "pages/**",
+						"group": "parent",
+						"position": "after"
+					},
+					{
+						"pattern": "core/**",
+						"group": "parent",
+						"position": "after"
+					}
+				],
+				"pathGroupsExcludedImportTypes": ["react", "react-dom"],
+				"newlines-between": "always",
+				"alphabetize": {
+					"order": "asc",
+					"caseInsensitive": true
+				}
+			}
+		]
 	}
 }

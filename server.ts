@@ -1,7 +1,9 @@
 import path from 'path'
+
 import express from 'express'
 import next from 'next'
 import favicon from 'serve-favicon'
+
 import routes from './src/core/routes'
 
 const port = process.env.PORT || 3000
