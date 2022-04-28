@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import Helmet from 'react-helmet'
 import App from 'next/app'
 import { ThemeProvider } from 'styled-components'
 
@@ -18,7 +17,6 @@ class MyApp extends App {
 				<Head>
 					<meta name="viewport" content="width=device-width, initial-scale=1" />
 				</Head>
-				<Helmet titleTemplate={'%s'} />
 
 				<ThemeProvider theme={styleGuide}>
 					<GlobalStyles />
