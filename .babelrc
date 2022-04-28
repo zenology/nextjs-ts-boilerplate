@@ -28,8 +28,7 @@
 				"alias": {
 					"components": "./src/components",
 					"pages": "./src/components/pages",
-          "core": "./src/core",
-          "config": "./src/config"
+          "core": "./src/core"
 				}
 			}
 		]

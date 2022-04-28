@@ -1,14 +1,21 @@
-import { GetStaticProps, NextPage } from 'next'
 import { withPage } from 'core/hocs'
 
 import { PageWrapper } from './HomePage.styled'
 
-const Home: NextPage = () => {
+import type { GetStaticProps } from 'next'
+import envObj from 'core/config/env'
+
+type PageProps = {
+	title: string
+	description: string
+}
+
+const Home: Page.PageType<PageProps> = ({ t }) => {
 	return (
 		<div className="container">
 			<PageWrapper>
-				<span>The React starter for</span>
-				<h1>Server-Rendered Apps</h1>
+				<span>{t('page.home.text-1')}</span>
+				<h1>{t('page.home.text-2', { env: envObj.NODE_ENV })}</h1>
 			</PageWrapper>
 		</div>
 	)

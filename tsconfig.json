@@ -19,7 +19,6 @@
 			"components/*": ["components/*"],
 			"pages/*": ["components/pages/*"],
 			"core/*": ["core/*"],
-			"config/*": ["config/*"]
 		}
 	},
 

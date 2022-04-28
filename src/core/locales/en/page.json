@@ -1,0 +1,14 @@
+{
+	"home": {
+		"text-1": "The React starter for",
+		"text-2": "Server-Rendered Apps {{env}}"
+	},
+	"about": {
+		"text-1": "About Page",
+		"text-2": "Server Render Content",
+		"user-id": "User ID: {{id}}",
+		"id": "ID: {{id}}",
+		"title": "Title: {{name}}",
+		"completed": "Completed: {{completed}}"
+	}
+}

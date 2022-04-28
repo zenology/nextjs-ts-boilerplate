@@ -1,8 +1,9 @@
 import Head from 'next/head'
 import App from 'next/app'
-import { ThemeProvider } from 'styled-components'
 
-import { GlobalStyles, styleGuide } from 'core/styles'
+import { ComposeProvider } from 'core/providers'
+
+import { GlobalStyles } from 'core/styles'
 
 class MyApp extends App {
 	render(): JSX.Element {
@@ -18,10 +19,10 @@ class MyApp extends App {
 					<meta name="viewport" content="width=device-width, initial-scale=1" />
 				</Head>
 
-				<ThemeProvider theme={styleGuide}>
+				<ComposeProvider>
 					<GlobalStyles />
 					<Component {...pageProps} router={router} />
-				</ThemeProvider>
+				</ComposeProvider>
 			</>
 		)
 	}

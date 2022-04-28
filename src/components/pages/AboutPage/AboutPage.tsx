@@ -1,11 +1,13 @@
-import { GetServerSideProps, NextPage } from 'next'
 import { withPage } from 'core/hocs'
 
 import { InnerWrapper, PageWrapper } from './AboutPage.styled'
 
 import { fetchAPI } from 'core/api'
 
+import type { GetServerSideProps } from 'next'
+
 interface IAboutPage {
+	title: string
 	data?: {
 		userId: string
 		id: string
@@ -14,28 +16,31 @@ interface IAboutPage {
 	}
 }
 
-const AboutPage: NextPage<IAboutPage> = ({ data }) => {
+const AboutPage: Page.PageType<IAboutPage> = ({ t, data }) => {
 	return (
 		<PageWrapper>
 			<InnerWrapper>
-				<p>About Page</p>
-				<strong>Server Render Content</strong>
-				<div>User ID: {data?.userId}</div>
-				<div>Id: {data?.id}</div>
-				<div>Title: {data?.title}</div>
-				<div>Completed: {String(data?.completed)}</div>
+				<p>{t('page.about.text-1')}</p>
+				<strong>{t('page.about.text-2')}</strong>
+				<div>{t('page.about.user-id', { id: data?.userId })}</div>
+				<div>{t('page.about.id', { id: data?.id })}</div>
+				<div>{t('page.about.title', { name: data?.title })}</div>
+				<div>{t('page.about.completed', { completed: data?.completed })}</div>
 			</InnerWrapper>
 		</PageWrapper>
 	)
 }
 
 export const getServerSideProps: GetServerSideProps = async ({ query }) => {
-	const data = await fetchAPI('https://jsonplaceholder.typicode.com/todos/', query?.id as string)
+	const response = await fetchAPI(
+		'https://jsonplaceholder.typicode.com/todos/',
+		query?.id as string
+	)
 
 	return {
 		props: {
 			title: 'About Page',
-			data
+			data: response.data
 		}
 	}
 }

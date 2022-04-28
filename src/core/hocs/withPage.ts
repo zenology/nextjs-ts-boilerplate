@@ -6,7 +6,7 @@ import React from 'react'
 
 const withPage =
 	() =>
-	(Component: React.ComponentType<any>): React.FC<any> => {
+	(Component: Page.PageType<any>): React.FC<any> => {
 		const hocs = [withMeta, withLayout]
 
 		return compose(...hocs)(Component)
