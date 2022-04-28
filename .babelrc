@@ -26,8 +26,8 @@
 			"module-resolver",
 			{
 				"alias": {
-					"router": "./src/router",
-          "components": "./src/components",
+					"components": "./src/components",
+					"pages": "./src/components/pages",
           "core": "./src/core",
           "config": "./src/config"
 				}

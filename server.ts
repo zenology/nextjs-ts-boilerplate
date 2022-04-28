@@ -25,7 +25,7 @@ app
 
 		server.listen(port, () => {
 			// eslint-disable-next-line
-			console.log(`> Ready on http://localhost:${port}`)
+			console.log(`✨ Ready on http://localhost:${port} ✨`)
 		})
 	})
 	.catch((e: any) => {

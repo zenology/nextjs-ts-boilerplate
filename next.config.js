@@ -23,7 +23,8 @@ const nextConfig = {
 
 			new Dotenv({
 				path: path.join(process.cwd(), '.env'),
-				systemvars: true
+				systemvars: true,
+				silent: true
 			})
 		]
 
